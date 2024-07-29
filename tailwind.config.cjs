@@ -140,7 +140,29 @@ module.exports = {
       transitionTimingFunction: {
         out1: 'cubic-bezier(0.25, 1, 0.5, 1)',
       },
+
+      animation: {
+        'montage-skew': 'montage-skew infinite',
+        'montage-translate': 'montage-translate infinite',
+      },
+      keyframes: {
+        'montage-skew': {
+          '0%': { transform: 'skewX(0deg)' },
+          '25%': { transform: 'skewX(calc(var(--montage) * -1deg))' },
+          '50%': { transform: 'skewX(0deg)' },
+          '75%': { transform: 'skewX(calc(var(--montage) * 1deg))' },
+          '100%': { transform: 'skewX(0deg)' },
+        },
+        'montage-translate': {
+          '0%': { transform: 'translateX(0)' },
+          '25%': { transform: 'translateX(calc(var(--montage) * -1px))' },
+          '50%': { transform: 'translateX(0)' },
+          '75%': { transform: 'translateX(calc(var(--montage) * 1px))' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
     },
   },
   plugins: [require('@tailwindcss/container-queries'), cssFiles, autoGrid, fontWidth],
+  safelist: ['animate-montage-skew', 'animate-montage-translate'],
 }
