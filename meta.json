@@ -1,7 +1,9 @@
 {
   "slug": "montage-text",
-  "title": "montage-text",
+  "title": "Montage Text",
   "author": "kaminaly",
-  "tags": [],
+  "tags": [
+    "animation"
+  ],
   "device": "all"
 }
